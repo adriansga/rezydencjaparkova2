@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kalkulator Uroczystości | Rezydencja Parkova</title>
-<meta name="description" content="Oblicz koszt uroczystości w Rezydencji Parkova — wesele, urodziny, komunia, imieniny. Wybierz dania i sprawdź cenę online.">
+<meta name="description" content="Oblicz koszt uroczystości w Rezydencji Parkova - wesele, urodziny, komunia, imieniny. Wybierz dania i sprawdź cenę online.">
 <link rel="canonical" href="https://rezydencjaparkova.pl/kalkulator-eventy.html">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,18 +13,18 @@
 <style>
 /* ─── VARIABLES ─── */
 :root{
-  --green:       #2E5E2A;
-  --green-dark:  #1E3D1A;
-  --green-light: #3d7a35;
-  --green-glow:  rgba(46,94,42,.45);
-  --gold:        #C8A028;
-  --gold-light:  #e0b830;
-  --dark:        #080B07;
-  --dark2:       #0d140c;
-  --dark3:       #121c10;
-  --text:        #f0f0ea;
-  --text-muted:  #8fa88d;
-  --border:      rgba(46,94,42,.22);
+  --green:       #4A7C59;
+  --green-dark:  #3A6347;
+  --green-light: #5C9470;
+  --green-glow:  rgba(74,124,89,.25);
+  --gold:        #B87333;
+  --gold-light:  #D4956A;
+  --dark:        #FAF7F2;
+  --dark2:       #F5F0E8;
+  --dark3:       #EDE8DE;
+  --text:        #1A1512;
+  --text-muted:  #6B5D52;
+  --border:      rgba(184,115,51,.18);
   --r-sm:  8px;
   --r-md: 14px;
   --r-lg: 22px;
@@ -38,7 +38,7 @@ body{font-family:'Montserrat',sans-serif;background:var(--dark);color:var(--text
 h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2}
 
 /* ─── HEADER ─── */
-header{background:rgba(8,11,7,.95);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;padding:1rem 1.5rem;backdrop-filter:blur(14px)}
+header{background:rgba(250,247,242,.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:50;padding:1rem 1.5rem;backdrop-filter:blur(14px)}
 .header-inner{max-width:896px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
 .logo-wrap{display:flex;align-items:center;gap:10px;text-decoration:none}
 .logo-sub{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--text-muted);font-weight:700;line-height:1}
@@ -66,25 +66,25 @@ main{max-width:896px;margin:0 auto;padding:2rem 1.5rem}
 /* ─── DATE / GUEST GRID ─── */
 .date-guest-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
 .date-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
-input[type=date],input[type=number]{background:var(--dark3);border-radius:var(--r-md);padding:.85rem;font-size:13px;border:1px solid var(--border);outline:none;width:100%;font-family:inherit;color:var(--text);color-scheme:dark}
+input[type=date],input[type=number]{background:var(--dark3);border-radius:var(--r-md);padding:.85rem;font-size:13px;border:1px solid var(--border);outline:none;width:100%;font-family:inherit;color:var(--text);color-scheme:light}
 input[type=date]:focus,input[type=number]:focus{border-color:var(--green)}
 .guest-input{font-size:40px;font-weight:700;text-align:center;border-radius:var(--r-md);padding:1.25rem;color:var(--gold) !important}
 .badge{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;text-transform:uppercase;padding:.4rem .9rem;border-radius:999px;letter-spacing:.05em}
-.badge-green{background:rgba(46,94,42,.25);color:#6bcf5f;border:1px solid rgba(46,94,42,.4)}
+.badge-green{background:rgba(74,124,89,.2);color:var(--green);border:1px solid rgba(74,124,89,.35)}
 .badge-amber{background:rgba(200,160,40,.12);color:var(--gold);border:1px solid rgba(200,160,40,.3)}
-.badge-blue{background:rgba(46,94,42,.15);color:var(--text-muted);border:1px solid var(--border)}
+.badge-blue{background:rgba(74,124,89,.15);color:var(--text-muted);border:1px solid var(--border)}
 .guest-section{border-left:1px solid var(--border);padding-left:24px}
 
 /* ─── CATEGORIES ─── */
 .cat-tabs{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;margin-bottom:12px}
 .cat-tab{padding:.7rem 1.4rem;border-radius:50px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;cursor:pointer;white-space:nowrap;border:1px solid var(--border);background:transparent;color:var(--text-muted);transition:var(--ease);font-family:inherit}
-.cat-tab:hover{color:var(--text);border-color:rgba(46,94,42,.5)}
+.cat-tab:hover{color:var(--text);border-color:rgba(74,124,89,.4)}
 .cat-tab.active{background:var(--green);color:#fff;border-color:var(--green);box-shadow:0 6px 20px var(--green-glow)}
 .menu-wrap{border-radius:var(--r-lg);border:1px solid var(--border);overflow:hidden}
 .menu-header{padding:1.25rem 1.75rem;background:var(--dark3);border-bottom:1px solid var(--border);font-family:'Playfair Display',serif;font-size:20px;color:var(--text)}
 .menu-item{padding:1.25rem 1.75rem;display:flex;align-items:center;justify-content:space-between;cursor:pointer;border-bottom:1px solid var(--border);background:var(--dark2);transition:background var(--ease)}
 .menu-item:last-child{border-bottom:none}
-.menu-item.selected{background:rgba(46,94,42,.15)}
+.menu-item.selected{background:rgba(74,124,89,.15)}
 .menu-item:hover{background:var(--dark3)}
 .item-left{display:flex;align-items:center;gap:16px}
 .item-check{width:24px;height:24px;border-radius:50%;border:2px solid var(--border);background:transparent;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .15s}
@@ -116,7 +116,7 @@ input[type=date]:focus,input[type=number]:focus{border-color:var(--green)}
 .admin-panel-header{display:flex;justify-content:space-between;align-items:center;background:rgba(46,94,42,.12);padding:1.5rem 2rem;border-radius:var(--r-lg);border:1px solid var(--border);margin-bottom:24px}
 .admin-panel-title{display:flex;align-items:center;gap:12px;color:var(--gold);font-family:'Playfair Display',serif;font-size:20px;letter-spacing:.05em}
 .admin-close{background:transparent;color:var(--text-muted);padding:.5rem 1.5rem;border-radius:var(--r-md);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--border);cursor:pointer;font-family:inherit;transition:var(--ease)}
-.admin-close:hover{color:var(--text);border-color:rgba(46,94,42,.5)}
+.admin-close:hover{color:var(--text);border-color:rgba(74,124,89,.4)}
 .admin-section{background:var(--dark2);padding:2rem;border-radius:var(--r-lg);border:1px solid var(--border);margin-bottom:24px}
 .admin-section-title{color:var(--gold);display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border);padding-bottom:12px;margin-bottom:20px;font-family:'Playfair Display',serif;font-size:16px}
 .discount-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
@@ -147,7 +147,7 @@ input[type=date]:focus,input[type=number]:focus{border-color:var(--green)}
 .price-block p.price-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted);margin-bottom:2px}
 .price-block p.price-value{font-family:'Playfair Display',serif;font-size:30px;color:var(--gold);line-height:1}
 .price-block p.price-total{font-family:'Playfair Display',serif;font-size:30px;color:var(--text);line-height:1}
-.price-block p.price-savings{font-family:'Playfair Display',serif;font-size:20px;color:#6bcf5f;line-height:1}
+.price-block p.price-savings{font-family:'Playfair Display',serif;font-size:20px;color:var(--green);line-height:1}
 .price-divider{width:1px;height:48px;background:var(--border)}
 .footer-right{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
 .footer-summary{font-size:9px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.1em;font-weight:600}
@@ -307,21 +307,21 @@ function renderCalculator() {
   <!-- Hero -->
   <div class="page-hero">
     <h1>Kalkulator <span>Uroczystości</span></h1>
-    <p>Skomponuj menu i sprawdź cenę online — wesele, urodziny, komunia, jubileusz</p>
+    <p>Skomponuj menu i sprawdź cenę online - wesele, urodziny, komunia, jubileusz</p>
   </div>
 
   <!-- Daty i goście -->
   <div class="card">
     <div class="date-guest-grid">
       <div>
-        <div class="card-title">📅 Termin uroczystości</div>
+        <div class="card-title">Termin uroczystości</div>
         <div class="date-grid">
           <input type="date" value="${state.formData.startDate}" min="${today}" onchange="setStartDate(this.value)">
           <input type="date" value="${state.formData.endDate}" min="${state.formData.startDate}" onchange="setEndDate(this.value)">
         </div>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px">
-          <span class="badge badge-green">🕐 ${dur} ${dur === 1 ? 'dzień' : 'dni'}</span>
-          ${durDisc > 0 ? `<span class="badge badge-amber">📉 Rabat pobytowy: -${durDisc.toFixed(2)} zł</span>` : ''}
+          <span class="badge badge-green">${dur} ${dur === 1 ? 'dzień' : 'dni'}</span>
+          ${durDisc > 0 ? `<span class="badge badge-amber">Rabat pobytowy: -${durDisc.toFixed(2)} zł</span>` : ''}
         </div>
       </div>
       <div class="guest-section">
@@ -362,7 +362,7 @@ function renderCalculator() {
 
   <!-- Formularz kontaktowy -->
   <div class="card" style="margin-bottom:24px">
-    <div class="card-title">✉️ Dane kontaktowe</div>
+    <div class="card-title">Dane kontaktowe</div>
     <div class="contact-grid">
       <input class="contact-input" type="text" placeholder="Imię i Nazwisko" value="${escHtml(state.formData.fullName)}" oninput="setField('fullName', this.value)">
       <input class="contact-input" type="email" placeholder="E-mail" value="${escHtml(state.formData.email)}" oninput="setField('email', this.value)">
@@ -373,7 +373,7 @@ function renderCalculator() {
   <!-- Nota prawna -->
   <div class="legal">
     <div class="legal-inner">
-      <span style="flex-shrink:0;margin-top:2px">ℹ️</span>
+      <span style="flex-shrink:0;margin-top:2px">i</span>
       <div>
         <p style="margin:0 0 4px">Ceny <strong>brutto</strong>. Łączny rabat (${totalDisc.toFixed(2)} zł/os/danie) wynika ze skumulowania zniżki grupowej i pobytowej.</p>
         <p style="margin:0">Kalkulacja nie stanowi oferty (art. 66 § 1 KC), lecz zaproszenie do rokowań (art. 71 KC). Rezerwacja wymaga pisemnego potwierdzenia przez Management Rezydencji Parkowej.</p>
@@ -437,7 +437,7 @@ function renderAdminPanel() {
 
   <!-- Rabaty -->
   <div class="admin-section">
-    <div class="admin-section-title">💰 Konfiguracja Rabatów (zł/os/danie)</div>
+    <div class="admin-section-title">Konfiguracja Rabatów (zł/os/danie)</div>
     <div class="discount-grid">
       <div>
         <p class="discount-label">Rabaty za ilość osób</p>
@@ -592,13 +592,13 @@ function deleteMenuItem(category, idx) {
 
 function submitInquiry() {
   const d = state.formData;
-  const items = state.selectedItems.map(i => i.name).join(', ') || '—';
+  const items = state.selectedItems.map(i => i.name).join(', ') || '-';
   const total = getTotalPrice().toLocaleString('pl-PL');
   alert(
     `Zapytanie wysłane!\n\n` +
-    `Klient: ${d.fullName || '—'}\n` +
-    `E-mail: ${d.email || '—'}\n` +
-    `Telefon: ${d.phone || '—'}\n` +
+    `Klient: ${d.fullName || '-'}\n` +
+    `E-mail: ${d.email || '-'}\n` +
+    `Telefon: ${d.phone || '-'}\n` +
     `Termin: ${d.startDate} – ${d.endDate}\n` +
     `Gości: ${state.guestCount}\n` +
     `Wybrane dania: ${items}\n` +
