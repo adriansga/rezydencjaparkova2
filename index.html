@@ -636,9 +636,8 @@ footer{background:var(--dark3);border-top:1px solid var(--border);padding:52px 4
 
 <!-- ─── URGENCY BAR ─── -->
 <div id="urgencyBar">
-  <span><svg style="width:1rem;height:1rem;display:inline-flex;vertical-align:-.1em;margin-right:4px" aria-hidden="true"><use href="#ic-flame"/></svg> Oferta specjalna - rezerwacja online:</span>
-  <strong id="urgencyTimer">72:00:00</strong>
-  <a href="#kontakt" class="urgency-cta">Zarezerwuj teraz →</a>
+  <span><svg style="width:1rem;height:1rem;display:inline-flex;vertical-align:-.1em;margin-right:4px" aria-hidden="true"><use href="#ic-flame"/></svg> Sezon letni 2026: wolne terminy w czerwcu i lipcu jeszcze dostępne.</span>
+  <a href="tel:+48886120501" class="urgency-cta" onclick="trackPhone('urgency-bar')">Sprawdź dostępność →</a>
 </div>
 
 <!-- ─── PROGRESS BAR ─── -->
@@ -761,7 +760,7 @@ footer{background:var(--dark3);border-top:1px solid var(--border);padding:52px 4
       <div class="about-text fade-up">
         <p class="s-label">O hotelu</p>
         <h2 class="s-title">Miejsce, gdzie historia<br>spotyka <em>nowoczesny komfort</em></h2>
-        <p class="s-sub">Zabytkowy pałac z 1913 roku, 4 hektary parku, Jezioro Siercze 120m od wejścia. Rodzinny obiekt z historią - nie sieciówka ze standardem.</p>
+        <p class="s-sub">Zabytkowy pałac z 1913 roku, 4 hektary parku, Jezioro Siercze 10m od hotelu. Rodzinny obiekt z historią - nie sieciówka ze standardem.</p>
         <div class="about-features">
           <div class="af">
             <svg aria-hidden="true"><use href="#ic-landmark"/></svg>
@@ -877,6 +876,13 @@ footer{background:var(--dark3);border-top:1px solid var(--border);padding:52px 4
         <p>Parking dla autokarów, full board, program pod klucz, jedna faktura VAT. Obsługujemy grupy od 20 do 100 osób.</p>
       </div>
     </div>
+    <div style="text-align:center;margin-top:44px" class="fade-up">
+      <p style="font-size:.9rem;color:var(--text-muted);margin-bottom:16px">Recepcja czynna całą dobę - sprawdzimy dostępność Twojego terminu natychmiast.</p>
+      <a href="tel:+48886120501" class="btn-primary" onclick="trackPhone('why-section')">
+        <svg class="btn-icon" aria-hidden="true"><use href="#ic-phone"/></svg>
+        Zarezerwuj termin
+      </a>
+    </div>
   </div>
 </section>
 
@@ -980,6 +986,7 @@ footer{background:var(--dark3);border-top:1px solid var(--border);padding:52px 4
       </div>
 
     </div>
+    <p class="s-sub fade-up" style="text-align:center;margin-top:32px;font-size:.9rem">Możliwe również rezerwacje bez pakietu - zadzwoń i dopasujemy ofertę do Twoich potrzeb: <a href="tel:+48886120501" style="color:var(--gold);font-weight:700">+48 886 120 501</a></p>
   </div>
 </section>
 
@@ -1341,8 +1348,8 @@ footer{background:var(--dark3);border-top:1px solid var(--border);padding:52px 4
 
     <!-- Formularz kontaktowy -->
     <div class="contact-form-wrap fade-up">
-      <h3>Wyślij zapytanie</h3>
-      <p class="sub">Odpiszemy w ciągu kilku godzin. Możesz też zadzwonić bezpośrednio - recepcja czynna całą dobę.</p>
+      <h3>Sprawdź dostępność terminu</h3>
+      <p class="sub">Bez zobowiązania - to tylko zapytanie. Oddzwonimy w ciągu 2h i sprawdzimy dostępność Twojego terminu.</p>
       <!-- Zastąp FORMSPREE_ID swoim ID z formspree.io -->
       <form id="contactForm" action="https://formspree.io/f/FORMSPREE_ID" method="POST">
         <div class="form-grid">
@@ -1380,7 +1387,7 @@ footer{background:var(--dark3);border-top:1px solid var(--border);padding:52px 4
         </div>
         <div class="form-msg" id="formMsg"></div>
         <button type="submit" class="form-submit" id="formBtn">
-          <span id="formBtnText"><svg class="btn-icon" aria-hidden="true"><use href="#ic-send"/></svg> Wyślij zapytanie</span>
+          <span id="formBtnText"><svg class="btn-icon" aria-hidden="true"><use href="#ic-send"/></svg> Sprawdź dostępność teraz</span>
         </button>
       </form>
     </div>
@@ -1481,30 +1488,8 @@ footer{background:var(--dark3);border-top:1px solid var(--border);padding:52px 4
 
 <!-- ─── SKRYPTY ─── -->
 <script>
-// ─── URGENCY BAR (72h od pierwszej wizyty) ───
-(function() {
-  const key = 'parkovaDeadline';
-  let deadline = localStorage.getItem(key);
-  if (!deadline) {
-    deadline = Date.now() + 72 * 60 * 60 * 1000;
-    localStorage.setItem(key, deadline);
-  }
-  const timerEl = document.getElementById('urgencyTimer');
-  const bar = document.getElementById('urgencyBar');
-  function updateTimer() {
-    const diff = parseInt(deadline) - Date.now();
-    if (diff <= 0) { bar.style.display = 'none'; return; }
-    const h = Math.floor(diff / 3600000);
-    const m = Math.floor((diff % 3600000) / 60000);
-    const s = Math.floor((diff % 60000) / 1000);
-    timerEl.textContent =
-      String(h).padStart(2,'0') + ':' +
-      String(m).padStart(2,'0') + ':' +
-      String(s).padStart(2,'0');
-  }
-  updateTimer();
-  setInterval(updateTimer, 1000);
-})();
+// ─── URGENCY BAR (statyczny komunikat sezonowy) ───
+// Timer usunięty - zastąpiony prawdziwym komunikatem o dostępności terminów
 
 // ─── PROGRESS BAR ───
 window.addEventListener('scroll', () => {
@@ -1609,11 +1594,11 @@ document.getElementById('exitPopup').addEventListener('click', function(e) {
 
 // ─── SOCIAL PROOF TOASTS ───
 const toastMessages = [
-  { icon: '<svg style="width:1.4rem;height:1.4rem;color:var(--gold)" aria-hidden="true"><use href="#ic-clock"/></svg>', text: 'Ktos z Warszawy wlasnie zapytal o termin', time: '2 minuty temu' },
-  { icon: '<svg style="width:1.4rem;height:1.4rem;color:var(--gold)" aria-hidden="true"><use href="#ic-heart"/></svg>', text: 'Para z Krakowa zarezerwowala pakiet romantyczny', time: '8 minut temu' },
-  { icon: '<svg style="width:1.4rem;height:1.4rem;color:var(--gold)" aria-hidden="true"><use href="#ic-backpack"/></svg>', text: 'Szkola z Gdanska zarezerwowala Zielona Szkole', time: '15 minut temu' },
-  { icon: '<svg style="width:1.4rem;height:1.4rem;color:var(--gold)" aria-hidden="true"><use href="#ic-phone"/></svg>', text: 'Ktos wlasnie zadzwonil w sprawie grupy', time: '5 minut temu' },
-  { icon: '<svg style="width:1.4rem;height:1.4rem;color:var(--gold)" aria-hidden="true"><use href="#ic-building-2"/></svg>', text: 'Firma z Poznania pyta o integracje firmowa', time: '12 minut temu' },
+  { icon: '<svg style="width:1.4rem;height:1.4rem;color:var(--gold)" aria-hidden="true"><use href="#ic-clock"/></svg>', text: 'Ktoś z Warszawy właśnie zapytał o termin', time: '2 minuty temu' },
+  { icon: '<svg style="width:1.4rem;height:1.4rem;color:var(--gold)" aria-hidden="true"><use href="#ic-heart"/></svg>', text: 'Para z Krakowa zarezerwowała pakiet romantyczny', time: '8 minut temu' },
+  { icon: '<svg style="width:1.4rem;height:1.4rem;color:var(--gold)" aria-hidden="true"><use href="#ic-backpack"/></svg>', text: 'Szkoła z Gdańska zarezerwowała Zieloną Szkołę', time: '15 minut temu' },
+  { icon: '<svg style="width:1.4rem;height:1.4rem;color:var(--gold)" aria-hidden="true"><use href="#ic-phone"/></svg>', text: 'Ktoś właśnie zadzwonił w sprawie grupy', time: '5 minut temu' },
+  { icon: '<svg style="width:1.4rem;height:1.4rem;color:var(--gold)" aria-hidden="true"><use href="#ic-building-2"/></svg>', text: 'Firma z Poznania pyta o integrację firmową', time: '12 minut temu' },
 ];
 let toastCount = 0;
 const MAX_TOASTS = 4;
