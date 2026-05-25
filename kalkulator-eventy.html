@@ -339,9 +339,9 @@ function renderCalculator() {
         </div>
       </div>
       <div class="guest-section">
-        <div class="card-title">👥 Liczba gości</div>
+        <div class="card-title"><svg style="width:1em;height:1em;vertical-align:-.15em;margin-right:.3em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Liczba gości</div>
         <input type="number" class="guest-input" value="${state.guestCount}" min="1" oninput="setGuestCount(this.value)">
-        ${guestDisc > 0 ? `<div style="margin-top:8px"><span class="badge badge-blue">🏷️ Rabat grupowy: -${guestDisc.toFixed(2)} zł/os</span></div>` : ''}
+        ${guestDisc > 0 ? `<div style="margin-top:8px"><span class="badge badge-blue">Rabat grupowy: -${guestDisc.toFixed(2)} zł/os</span></div>` : ''}
       </div>
     </div>
   </div>
@@ -430,7 +430,7 @@ function renderStickyFooter() {
 function renderAdminLogin() {
   return `
   <div class="admin-login">
-    <div class="admin-lock">🔒</div>
+    <div class="admin-lock"><svg style="width:2rem;height:2rem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
     <h2 style="font-family:'Playfair Display',serif;font-size:20px;margin-bottom:.5rem;color:var(--text)">Panel Zarządzania</h2>
     <p style="font-size:12px;color:var(--text-muted);margin-bottom:1.5rem">Dostęp tylko dla administratorów</p>
     <div class="admin-form">
@@ -445,7 +445,7 @@ function renderAdminLogin() {
 function renderAdminPanel() {
   let html = `
   <div class="admin-panel-header">
-    <div class="admin-panel-title">🔓 Edycja Systemu</div>
+    <div class="admin-panel-title"><svg style="width:1em;height:1em;vertical-align:-.1em;margin-right:.3em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>Edycja Systemu</div>
     <button class="admin-close" onclick="closeAdmin()">Zamknij panel</button>
   </div>
 
@@ -489,7 +489,7 @@ function renderAdminPanel() {
       <div class="menu-edit-row">
         <input class="menu-edit-name" value="${escHtml(item.name)}" onchange="updateMenuName('${key}',${idx},this.value)">
         <input type="number" class="menu-edit-price" value="${item.price}" onchange="updateMenuPrice('${key}',${idx},this.value)">
-        <button class="delete-btn" onclick="deleteMenuItem('${key}',${idx})">🗑️</button>
+        <button class="delete-btn" onclick="deleteMenuItem('${key}',${idx})"><svg style="width:1em;height:1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/></svg></button>
       </div>`).join('')}
     </div>
   </div>`;
