@@ -204,20 +204,33 @@ const ADMIN_PASSWORD = "Parkova2024";
 
 const DEFAULT_MENU = {
   zupy: [
-    { id: 1, name: "Rosół królewski z makaronem domowym", price: 18 },
-    { id: 2, name: "Krem z białych warzyw z oliwą truflową", price: 22 },
+    { id: 1, name: "1 zupa", price: 18 },
+    { id: 2, name: "2 zupy", price: 32 },
   ],
   dania_cieple: [
-    { id: 3, name: "Pierś z kaczki w sosie wiśniowym", price: 55 },
-    { id: 4, name: "Polędwiczki wieprzowe w sosie kurkowym", price: 48 },
+    { id: 3, name: "1 danie ciepłe", price: 55 },
+    { id: 4, name: "2 dania ciepłe", price: 105 },
+    { id: 5, name: "3 dania ciepłe", price: 150 },
+    { id: 8, name: "4 dania ciepłe", price: 190 },
+    { id: 11, name: "5 dań ciepłych", price: 225 },
   ],
   przystawki: [
-    { id: 6, name: "Półmisek wędlin staropolskich", price: 35 },
-    { id: 7, name: "Tatar wołowy z dodatkami", price: 42 },
+    { id: 6, name: "1 przystawka", price: 35 },
+    { id: 7, name: "2 przystawki", price: 65 },
+    { id: 12, name: "3 przystawki", price: 92 },
+    { id: 13, name: "4 przystawki", price: 116 },
+    { id: 14, name: "5 przystawek", price: 138 },
+    { id: 15, name: "6 przystawek", price: 158 },
+    { id: 16, name: "7 przystawek", price: 175 },
   ],
   bufet_slodki: [
-    { id: 9, name: "Wybór ciast domowych", price: 25 },
-    { id: 10, name: "Mini desery bankietowe", price: 30 },
+    { id: 9, name: "Ciastka", price: 25 },
+    { id: 10, name: "Ciasta", price: 30 },
+  ],
+  napoje: [
+    { id: 17, name: "Niegazowane", price: 8 },
+    { id: 18, name: "Gazowane", price: 8 },
+    { id: 19, name: "Kawa i herbata", price: 12 },
   ],
 };
 
@@ -231,6 +244,7 @@ const CATEGORY_NAMES = {
   dania_cieple: "Dania Ciepłe",
   przystawki: "Przystawki",
   bufet_slodki: "Bufet Słodki",
+  napoje: "Napoje",
 };
 
 const today = new Date().toISOString().split("T")[0];
