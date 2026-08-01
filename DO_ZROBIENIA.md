@@ -87,7 +87,7 @@ Plik `robots.txt` utworzony. Allow: /, Disallow: /backup/
 
 ### 9. Zgłoś stronę do Google Search Console
 1. Wejdź na search.google.com/search-console
-2. Dodaj właściwość: rezydencjaparkowa.pl
+2. Dodaj właściwość: rezydencjaparkowa.com
 3. Zweryfikuj przez Google Analytics (jeśli GA4 już działa) lub plik HTML
 4. Prześlij sitemap.xml
 
@@ -111,7 +111,7 @@ Sprawdź i zastąp:
 Plik `favicon.svg` utworzony (złote "P" na ciemnozielonym tle). Już podłączony w `<head>`.
 
 ### 13. Test formularzy po podłączeniu Formspree
-Wyślij testowe zapytanie z obu formularzy i sprawdź czy email dochodzi na biuro@rezydencjaparkova.pl:
+Wyślij testowe zapytanie z obu formularzy i sprawdź czy email dochodzi na biuro@rezydencjaparkowa.com:
 - [ ] Formularz kontaktowy (sekcja kontakt)
 - [ ] Formularz callback przy kalkulatorze grupowym
 
@@ -167,4 +167,4 @@ Sprawdź:
 
 ---
 
-**Kontakt do dewelopera:** biuro@rezydencjaparkova.pl
+**Kontakt do dewelopera:** biuro@rezydencjaparkowa.com

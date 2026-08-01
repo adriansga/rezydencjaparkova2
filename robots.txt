@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /backup/
 
-Sitemap: https://rezydencjaparkowa.pl/sitemap.xml
+Sitemap: https://rezydencjaparkowa.com/sitemap.xml
