@@ -87,7 +87,7 @@ Plik `robots.txt` utworzony. Allow: /, Disallow: /backup/
 
 ### 9. Zgłoś stronę do Google Search Console
 1. Wejdź na search.google.com/search-console
-2. Dodaj właściwość: rezydencjaparkova.pl
+2. Dodaj właściwość: rezydencjaparkowa.pl
 3. Zweryfikuj przez Google Analytics (jeśli GA4 już działa) lub plik HTML
 4. Prześlij sitemap.xml
 
