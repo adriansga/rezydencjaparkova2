@@ -1351,8 +1351,9 @@ footer{background:var(--dark3);border-top:1px solid var(--border);padding:52px 4
     <div class="contact-form-wrap fade-up">
       <h3>Sprawdź dostępność terminu</h3>
       <p class="sub">Bez zobowiązania - to tylko zapytanie. Oddzwonimy w ciągu 2h i sprawdzimy dostępność Twojego terminu.</p>
-      <!-- Zastąp FORMSPREE_ID swoim ID z formspree.io -->
-      <form id="contactForm" action="https://formspree.io/f/FORMSPREE_ID" method="POST">
+      <form id="contactForm" action="https://parkova-leads-api.vercel.app/api/lead" method="POST">
+        <input type="hidden" name="_subject" value="Zapytanie ze strony glownej - sprawdzenie dostepnosci">
+        <input type="hidden" name="source" value="strona-glowna-formularz">
         <div class="form-grid">
           <div class="form-field">
             <label for="fname">Imię i nazwisko *</label>
@@ -1632,10 +1633,11 @@ document.getElementById('contactForm').addEventListener('submit', async function
   msg.className = 'form-msg';
   msg.style.display = 'none';
   try {
+    const payload = Object.fromEntries(new FormData(this).entries());
     const res = await fetch(this.action, {
       method: 'POST',
-      body: new FormData(this),
-      headers: { 'Accept': 'application/json' }
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
     });
     if (res.ok) {
       msg.textContent = 'Wiadomosc wyslana. Odpiszemy w ciagu kilku godzin.';
@@ -1651,7 +1653,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
     msg.className = 'form-msg error';
   }
   btn.disabled = false;
-  btnText.innerHTML = '<svg class="btn-icon" aria-hidden="true"><use href="#ic-send"/></svg> Wyślij zapytanie';
+  btnText.innerHTML = '<svg class="btn-icon" aria-hidden="true"><use href="#ic-send"/></svg> Sprawdź dostępność teraz';
 });
 
 // ─── ANALYTICS TRACKING ───

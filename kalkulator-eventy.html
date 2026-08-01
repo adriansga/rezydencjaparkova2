@@ -604,20 +604,54 @@ function deleteMenuItem(category, idx) {
   render();
 }
 
-function submitInquiry() {
+async function submitInquiry() {
   const d = state.formData;
   const items = state.selectedItems.map(i => i.name).join(', ') || '-';
   const total = getTotalPrice().toLocaleString('pl-PL');
-  alert(
-    `Zapytanie wysłane!\n\n` +
-    `Klient: ${d.fullName || '-'}\n` +
-    `E-mail: ${d.email || '-'}\n` +
-    `Telefon: ${d.phone || '-'}\n` +
-    `Termin: ${d.startDate} – ${d.endDate}\n` +
-    `Gości: ${state.guestCount}\n` +
-    `Wybrane dania: ${items}\n` +
-    `Suma: ${total} zł`
-  );
+
+  if (!d.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email)) {
+    alert('Podaj poprawny adres e-mail przed wysłaniem zapytania.');
+    return;
+  }
+
+  if (!d.fullName && !d.phone) {
+    alert('Podaj imię i nazwisko albo telefon przed wysłaniem zapytania.');
+    return;
+  }
+
+  try {
+    const res = await fetch('https://parkova-leads-api.vercel.app/api/lead', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        _subject: 'Zapytanie z kalkulatora uroczystosci',
+        source: 'kalkulator-eventy',
+        fullName: d.fullName,
+        email: d.email,
+        phone: d.phone,
+        startDate: d.startDate,
+        endDate: d.endDate,
+        guestCount: state.guestCount,
+        items,
+        total: `${total} zł`
+      })
+    });
+
+    if (!res.ok) throw new Error('send failed');
+
+    alert(
+      `Zapytanie wysłane!\n\n` +
+      `Klient: ${d.fullName || '-'}\n` +
+      `E-mail: ${d.email || '-'}\n` +
+      `Telefon: ${d.phone || '-'}\n` +
+      `Termin: ${d.startDate} - ${d.endDate}\n` +
+      `Gości: ${state.guestCount}\n` +
+      `Wybrane dania: ${items}\n` +
+      `Suma: ${total} zł`
+    );
+  } catch {
+    alert('Nie udało się wysłać zapytania. Zadzwoń: +48 886 120 501');
+  }
 }
 
 // ─── INIT ───

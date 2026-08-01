@@ -191,7 +191,7 @@ footer a{color:var(--gold)}
     <!-- Callback form -->
     <div class="calc-callback">
       <p class="cc-divider">Nie możesz teraz zadzwonić? Zostaw dane - <span>oddzwonimy w 2h.</span></p>
-      <form class="cc-form" id="callbackForm" action="https://formspree.io/f/FORMSPREE_ID" method="POST">
+      <form class="cc-form" id="callbackForm" action="https://parkova-leads-api.vercel.app/api/lead" method="POST">
         <input type="hidden" name="_subject" value="Zapytanie z kalkulatora grup (podstrona) - oddzwonienie">
         <input type="hidden" name="source" value="kalkulator-grupowy-subpage">
         <input type="hidden" name="szacunkowa_cena" id="cbPrice">
@@ -253,7 +253,12 @@ function calcUpdate() {
     btn.textContent = 'Wysyłam...';
     msg.className = 'cc-msg';
     try {
-      const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+      const payload = Object.fromEntries(new FormData(form).entries());
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
       if (res.ok) {
         msg.textContent = 'Gotowe. Oddzwonimy w ciagu 2h.';
         msg.className = 'cc-msg ok';
